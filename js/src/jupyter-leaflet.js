@@ -40,6 +40,9 @@ var widgetcontrol = require('./controls/WidgetControl.js')
 var zoomcontrol = require('./controls/ZoomControl.js')
 var scalecontrol = require('./controls/ScaleControl.js')
 
+//Geo
+var car = require('./geo/crs/CRS.CAR.js')
+
 //Map
 var map = require('./Map.js');
 

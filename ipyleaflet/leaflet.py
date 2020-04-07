@@ -27,7 +27,7 @@ from .xarray_ds import ds_x_to_json
 from ._version import EXTENSION_VERSION
 
 def_loc = [0.0, 0.0]
-allowed_crs = ['Earth', 'EPSG3395', 'EPSG3857', 'EPSG4326', 'Base', 'Simple']
+allowed_crs = ['Earth', 'EPSG3395', 'EPSG3857', 'EPSG4326', 'Base', 'Simple', 'CAR']
 allowed_cursor = ['alias', 'cell', 'grab', 'move', 'crosshair', 'context-menu',
                   'n-resize', 'ne-resize', 'e-resize', 'se-resize', 's-resize',
                   'sw-resize', 'w-resize', 'nw-resize', 'nesw-resize',
