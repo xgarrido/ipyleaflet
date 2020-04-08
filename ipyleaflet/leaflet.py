@@ -703,10 +703,19 @@ class FullScreenControl(Control):
     _model_name = Unicode('LeafletFullScreenControlModel').tag(sync=True)
 
 
+class MousePositionControl(Control):
+    _view_name = Unicode('LeafletMousePositionControlView').tag(sync=True)
+    _model_name = Unicode('LeafletMousePositionControlModel').tag(sync=True)
+
+    prefix = Unicode('').tag(sync=True, o=True)
+    position = Unicode('bottomleft').tag(sync=True, o=True)
+
+
 class LayersControl(Control):
     _view_name = Unicode('LeafletLayersControlView').tag(sync=True)
     _model_name = Unicode('LeafletLayersControlModel').tag(sync=True)
 
+    position = Unicode('topright').tag(sync=True, o=True)
 
 class MeasureControl(Control):
     _view_name = Unicode('LeafletMeasureControlView').tag(sync=True)

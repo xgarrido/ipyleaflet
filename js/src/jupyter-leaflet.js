@@ -39,6 +39,7 @@ var fullscreencontrol = require('./controls/FullScreenControl.js');
 var widgetcontrol = require('./controls/WidgetControl.js')
 var zoomcontrol = require('./controls/ZoomControl.js')
 var scalecontrol = require('./controls/ScaleControl.js')
+var mousecontrol = require('./controls/MousePositionControl.js')
 
 //Geo
 var car = require('./geo/crs/CRS.CAR.js')
@@ -56,6 +57,7 @@ require('leaflet-fullscreen/dist/leaflet.fullscreen.css');
 require('leaflet.awesome-markers/dist/leaflet.awesome-markers.css');
 require('spin.js/spin.css');
 require('./jupyter-leaflet.css');
+require('./controls/MousePositionControl.css');
 
 // Forcibly load the marker icon images to be in the bundle.
 require('leaflet/dist/images/marker-shadow.png');
@@ -98,6 +100,7 @@ module.exports = {
     LeafletDrawControlView : drawcontrol.LeafletDrawControlView,
     LeafletSplitMapControlView : splitmapcontrol.LeafletSplitMapControlView,
     LeafletFullScreenControlView : fullscreencontrol.LeafletFullScreenControlView,
+    LeafletMousePositionControlView : mousecontrol.LeafletMousePositionControlView,
     LeafletWidgetControlView : widgetcontrol.LeafletWidgetControlView,
     LeafletZoomControlView : zoomcontrol.LeafletZoomControlView,
     LeafletScaleControlView : scalecontrol.LeafletScaleControlView,
@@ -137,6 +140,7 @@ module.exports = {
     LeafletDrawControlModel : drawcontrol.LeafletDrawControlModel,
     LeafletSplitMapControlModel : splitmapcontrol.LeafletSplitMapControlModel,
     LeafletFullScreenControlModel : fullscreencontrol.LeafletFullScreenControlModel,
+    LeafletMousePositionControlModel : mousecontrol.LeafletMousePositionControlModel,
     LeafletWidgetControlModel : widgetcontrol.LeafletWidgetControlModel,
     LeafletZoomControlModel : zoomcontrol.LeafletZoomControlModel,
     LeafletScaleControlModel : scalecontrol.LeafletScaleControlModel,
