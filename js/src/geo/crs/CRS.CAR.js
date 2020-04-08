@@ -1,17 +1,11 @@
 const L = require('../../leaflet.js');
-// import {CRS} from './CRS';
-// import {LonLat} from '../projection/Projection.LonLat';
-// import {toTransformation} from '../../geometry/Transformation';
-// import * as Util from '../../core/Util';
 
 /*
  * @namespace CRS
  * @crs L.CRS.CAR
  *
  * A simple CRS that maps longitude and latitude into `x` and `y` directly.
- * May be used for maps of flat surfaces (e.g. game maps). Note that the `y`
- * axis should still be inverted (going from bottom to top). `distance()` returns
- * simple euclidean distance.
+ * `distance()` returns simple euclidean distance.
  */
 
 export var CAR = L.extend({}, L.CRS, {
