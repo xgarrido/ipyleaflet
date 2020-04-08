@@ -84,7 +84,6 @@ export class LeafletMousePositionControlView extends control.LeafletControlView 
   }
 
   create_obj() {
-      console.log("Create mouse position");
-      this.obj = L.control.mousePosition(this.get_options());
+    this.obj = L.control.mousePosition(this.get_options());
   }
 }

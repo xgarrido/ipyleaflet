@@ -480,6 +480,11 @@ class MarkerCluster(Layer):
     markers = Tuple().tag(trait=Instance(Marker), sync=True, **widget_serialization)
 
 
+class Graticule(Layer):
+    _view_name = Unicode('LeafletGraticuleView').tag(sync=True)
+    _model_name = Unicode('LeafletGraticuleModel').tag(sync=True)
+
+
 class LayerGroup(Layer):
     _view_name = Unicode('LeafletLayerGroupView').tag(sync=True)
     _model_name = Unicode('LeafletLayerGroupModel').tag(sync=True)

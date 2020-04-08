@@ -24,6 +24,7 @@ var rectangle = require('./layers/Rectangle.js');
 var circlemarker = require('./layers/CircleMarker.js');
 var circle = require('./layers/Circle.js');
 var markercluster = require('./layers/MarkerCluster.js');
+var graticule = require('./layers/Graticule.js');
 var layergroup = require('./layers/LayerGroup.js');
 var featuregroup = require('./layers/FeatureGroup.js');
 var geojson = require('./layers/GeoJSON.js');
@@ -90,6 +91,7 @@ module.exports = {
     LeafletCircleMarkerView : circlemarker.LeafletCircleMarkerView,
     LeafletCircleView : circle.LeafletCircleView,
     LeafletMarkerClusterView : markercluster.LeafletMarkerClusterView,
+    LeafletGraticuleView : graticule.LeafletGraticuleView,
     LeafletLayerGroupView : layergroup.LeafletLayerGroupView,
     LeafletFeatureGroupView : featuregroup.LeafletFeatureGroupView,
     LeafletGeoJSONView : geojson.LeafletGeoJSONView,
@@ -130,6 +132,7 @@ module.exports = {
     LeafletCircleMarkerModel : circlemarker.LeafletCircleMarkerModel,
     LeafletCircleModel : circle.LeafletCircleModel,
     LeafletMarkerClusterModel : markercluster.LeafletMarkerClusterModel,
+    LeafletGraticuleModel : graticule.LeafletGraticuleModel,
     LeafletLayerGroupModel : layergroup.LeafletLayerGroupModel,
     LeafletFeatureGroupModel : featuregroup.LeafletFeatureGroupModel,
     LeafletGeoJSONModel : geojson.LeafletGeoJSONModel,
