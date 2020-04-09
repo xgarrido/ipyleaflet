@@ -32,3 +32,19 @@ export class LeafletCircleView extends circlemarker.LeafletCircleMarkerView {
     );
   }
 }
+
+var orgReadbleDistance = L.GeometryUtil.readableDistance;
+L.GeometryUtil.readableDistance = function (distance, isMetric, isFeet, isNauticalMile, precision) {
+    if (isMetric||isNauticalMile||!isFeet) return orgReadbleDistance(distance, isMetric, isFeet, isNauticalMile, precision);
+    return L.GeometryUtil.formattedNumber(distance, 1) + ' degrees';
+};
+
+// Fix radius sign for CAR projection
+L.Circle.include({
+    orgProject: L.Circle.prototype._project,
+    _project: function () {
+        console.log("Own project function");
+        this.orgProject();
+        this._radius = Math.abs(this._radius);
+    }
+});
