@@ -45,13 +45,16 @@ export class LeafletLayersControlView extends control.LeafletControlView {
     return Promise.all(this.map_view.layer_views.views)
       .then(views => {
         var baselayers = views.reduce(function(ov, view) {
-          if (view.model.get('base')) {
+            if (view.model.get('base')) {
+                console.log("Base layers name =", view.model.get('name'));
             ov[view.model.get('name')] = view.obj;
           }
           return ov;
         }, {});
         var overlays = views.reduce(function(ov, view) {
-          if (!view.model.get('base')) {
+            if (!view.model.get('base') && view.model.get('name') != "") {
+                console.log("Overlays name =", view.model.get('name'));
+              console.log("View obj =", view.obj);
             ov[view.model.get('name')] = view.obj;
           }
           return ov;

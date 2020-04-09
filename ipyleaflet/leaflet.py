@@ -494,8 +494,6 @@ class Graticule(Layer):
     _view_name = Unicode('LeafletGraticuleView').tag(sync=True)
     _model_name = Unicode('LeafletGraticuleModel').tag(sync=True)
 
-    name = Unicode('Graticule').tag(sync=True, o=True)
-
 class LayerGroup(Layer):
     _view_name = Unicode('LeafletLayerGroupView').tag(sync=True)
     _model_name = Unicode('LeafletLayerGroupModel').tag(sync=True)
@@ -975,7 +973,7 @@ class Map(DOMWidget, InteractMixin):
     inertia_deceleration = Int(3000).tag(sync=True, o=True)
     inertia_max_speed = Int(1500).tag(sync=True, o=True)
     # inertia_threshold = Int(?, o=True).tag(sync=True)
-    # fade_animation = Bool(?).tag(sync=True, o=True)
+    fade_animation = Bool(True).tag(sync=True, o=True)
     # zoom_animation = Bool(?).tag(sync=True, o=True)
     zoom_animation_threshold = Int(4).tag(sync=True, o=True)
     # marker_zoom_animation = Bool(?).tag(sync=True, o=True)
