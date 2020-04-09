@@ -484,6 +484,7 @@ class Graticule(Layer):
     _view_name = Unicode('LeafletGraticuleView').tag(sync=True)
     _model_name = Unicode('LeafletGraticuleModel').tag(sync=True)
 
+    name = Unicode('Graticule').tag(sync=True, o=True)
 
 class LayerGroup(Layer):
     _view_name = Unicode('LeafletLayerGroupView').tag(sync=True)
@@ -721,6 +722,7 @@ class LayersControl(Control):
     _model_name = Unicode('LeafletLayersControlModel').tag(sync=True)
 
     position = Unicode('topright').tag(sync=True, o=True)
+    collapsed = Bool(True).tag(sync=True, o=True)
 
 class MeasureControl(Control):
     _view_name = Unicode('LeafletMeasureControlView').tag(sync=True)

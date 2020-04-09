@@ -542,7 +542,7 @@ export class LeafletGraticuleModel extends layer.LeafletLayerModel {
     return {
       ...super.defaults(),
       _view_name: 'LeafletGraticuleView',
-      _model_name: 'LeafletGraticuleModel'
+      _model_name: 'LeafletGraticuleModel',
     };
   }
 }
