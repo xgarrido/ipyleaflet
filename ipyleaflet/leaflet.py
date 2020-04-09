@@ -27,13 +27,14 @@ from .xarray_ds import ds_x_to_json
 from ._version import EXTENSION_VERSION
 
 def_loc = [0.0, 0.0]
-allowed_crs = ['Earth', 'EPSG3395', 'EPSG3857', 'EPSG4326', 'Base', 'Simple', 'CAR']
+allowed_crs = ['CAR', 'Earth', 'EPSG3395', 'EPSG3857', 'EPSG4326', 'Base', 'Simple']
 allowed_cursor = ['alias', 'cell', 'grab', 'move', 'crosshair', 'context-menu',
                   'n-resize', 'ne-resize', 'e-resize', 'se-resize', 's-resize',
                   'sw-resize', 'w-resize', 'nw-resize', 'nesw-resize',
                   'nwse-resize', 'row-resize', 'col-resize', 'copy', 'default',
                   'grabbing', 'help', 'no-drop', 'not-allowed', 'pointer',
                   'progress', 'text', 'wait', 'zoom-in', 'zoom-out']
+allowed_colormaps = ['gray', 'planck', 'wmap']
 
 
 def basemap_to_tiles(basemap, day='yesterday', **kwargs):
@@ -283,6 +284,15 @@ class LocalTileLayer(TileLayer):
     _model_name = Unicode('LeafletLocalTileLayerModel').tag(sync=True)
 
     path = Unicode('').tag(sync=True)
+
+class ColorizableTileLayer(LocalTileLayer):
+    _view_name = Unicode('LeafletColorizableTileLayerView').tag(sync=True)
+    _model_name = Unicode('LeafletColorizableTileLayerModel').tag(sync=True)
+
+    colormap = Enum(values=allowed_colormaps, default_value='planck').tag(sync=True, o=True)
+    min = Float(-500).tag(sync=True, o=True)
+    max = Float(+500).tag(sync=True, o=True)
+    scale = Float(1.0).tag(sync=True, o=True)
 
 
 class WMSLayer(TileLayer):

@@ -10,6 +10,7 @@ var popup = require('./layers/Popup.js');
 var rasterlayer = require('./layers/RasterLayer.js');
 var tilelayer = require('./layers/TileLayer.js');
 var localtilelayer = require('./layers/LocalTileLayer.js');
+var colorizabletilelayer = require('./layers/ColorizableTileLayer.js');
 var wmslayer = require('./layers/WMSLayer.js');
 var imageoverlay = require('./layers/ImageOverlay.js');
 var videooverlay = require('./layers/VideoOverlay.js');
@@ -77,6 +78,7 @@ module.exports = {
     LeafletRasterLayerView : rasterlayer.LeafletRasterLayerView,
     LeafletTileLayerView : tilelayer.LeafletTileLayerView,
     LeafletLocalTileLayerView : localtilelayer.LeafletLocalTileLayerView,
+    LeafletColorizableTileLayerView : colorizabletilelayer.LeafletColorizableTileLayerView,
     LeafletWMSLayerView : wmslayer.LeafletWMSLayerView,
     LeafletImageOverlayView : imageoverlay.LeafletImageOverlayView,
     LeafletVideoOverlayView : videooverlay.LeafletVideoOverlayView,
@@ -118,6 +120,7 @@ module.exports = {
     LeafletRasterLayerModel : rasterlayer.LeafletRasterLayerModel,
     LeafletTileLayerModel : tilelayer.LeafletTileLayerModel,
     LeafletLocalTileLayerModel : localtilelayer.LeafletLocalTileLayerModel,
+    LeafletColorizableTileLayerModel : colorizabletilelayer.LeafletColorizableTileLayerModel,
     LeafletWMSLayerModel : wmslayer.LeafletWMSLayerModel,
     LeafletImageOverlayModel : imageoverlay.LeafletImageOverlayModel,
     LeafletVideoOverlayModel : videooverlay.LeafletVideoOverlayModel,
