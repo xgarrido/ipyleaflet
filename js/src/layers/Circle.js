@@ -33,6 +33,7 @@ export class LeafletCircleView extends circlemarker.LeafletCircleMarkerView {
   }
 }
 
+// Print distance in degrees
 var orgReadbleDistance = L.GeometryUtil.readableDistance;
 L.GeometryUtil.readableDistance = function (distance, isMetric, isFeet, isNauticalMile, precision) {
     if (isMetric||isNauticalMile||!isFeet) return orgReadbleDistance(distance, isMetric, isFeet, isNauticalMile, precision);
@@ -43,7 +44,6 @@ L.GeometryUtil.readableDistance = function (distance, isMetric, isFeet, isNautic
 L.Circle.include({
     orgProject: L.Circle.prototype._project,
     _project: function () {
-        console.log("Own project function");
         this.orgProject();
         this._radius = Math.abs(this._radius);
     }
