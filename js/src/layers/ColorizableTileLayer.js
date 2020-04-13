@@ -5,9 +5,10 @@ const tilelayer = require('./TileLayer.js');
 
 L.ColorizableUtils = {
 	colormaps: {
-		"gray":   [[0,0x000000],[1,0xffffff]],
-		"planck": [[0,0x0000ff],[0.332,0x00d7ff],[0.5,0xffedd9],[0.664,0xffb400],[0.828,0xff4b00],[1,0x640000]],
-		"wmap":   [[0,0x000080],[0.15,0x0000ff],[0.4,0x00ffff],[0.7,0xffff00],[0.9,0xff5500],[1,0x800000]],
+		"gray":    [[0,0x000000],[1,0xffffff]],
+		"planck":  [[0,0x0000ff],[0.332,0x00d7ff],[0.5,0xffedd9],[0.664,0xffb400],[0.828,0xff4b00],[1,0x640000]],
+		"wmap":    [[0,0x000080],[0.15,0x0000ff],[0.4,0x00ffff],[0.7,0xffff00],[0.9,0xff5500],[1,0x800000]],
+                "hotcold": [[0,0x0000ff],[0.5,0x000000],[1,0xff0000]]
 	},
 	lookup_tables: {},
 	apply_scale: function(vmin, vmax, scale, skew) {
@@ -125,6 +126,8 @@ L.TileLayer.Colorizable = L.TileLayer.extend({
 	initialize: function (url, opts) {
 		L.TileLayer.prototype.initialize.call(this, url, opts);
 		this.cache = null;
+            //     this._map.fire("recolor");
+            // console.log("Fire recolor initialize");
 	},
 
 	setColors: function (opts) {
@@ -214,6 +217,8 @@ L.TileLayer.Colorizable = L.TileLayer.extend({
 			// color maps etc.
 			if(tile.el.raw) this._updateTile(tile.el);
 		}
+                this._map.fire("recolor");
+            console.log("Fire recolor");
 	},
 
 	_addToCache: function (url, tile) {
@@ -255,10 +260,10 @@ L.TileLayer.Colorizable = L.TileLayer.extend({
 		var tsub  = point.subtract(tcoord.scaleBy(tsize));
 		tcoord.z  = this._map.getZoom();
 		var key   = this._tileCoordsToKey(tcoord);
-		console.log([this, key, tsub, tcoord, key in this._tiles]);
+		// console.log([this, key, tsub, tcoord, key in this._tiles]);
 		if(!(key in this._tiles)) return Number.NaN;
 		var tile  = this._tiles[key];
-		console.log(["A",tile, tsub.y*tsize.x+tsub.x, tile.el.raw[tsub.y*tsize.x+tsub.x]]);
+		// console.log(["A",tile, tsub.y*tsize.x+tsub.x, tile.el.raw[tsub.y*tsize.x+tsub.x]]);
 		var val   = tile.el.raw[tsub.y*tsize.x+tsub.x];
 		return val;
 	}

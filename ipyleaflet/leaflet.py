@@ -34,7 +34,7 @@ allowed_cursor = ['alias', 'cell', 'grab', 'move', 'crosshair', 'context-menu',
                   'nwse-resize', 'row-resize', 'col-resize', 'copy', 'default',
                   'grabbing', 'help', 'no-drop', 'not-allowed', 'pointer',
                   'progress', 'text', 'wait', 'zoom-in', 'zoom-out']
-allowed_colormaps = ['gray', 'planck', 'wmap']
+allowed_colormaps = ['gray', 'planck', 'wmap', 'hotcold']
 
 
 def basemap_to_tiles(basemap, day='yesterday', **kwargs):
@@ -715,6 +715,14 @@ class WidgetControl(Control):
 class FullScreenControl(Control):
     _view_name = Unicode('LeafletFullScreenControlView').tag(sync=True)
     _model_name = Unicode('LeafletFullScreenControlModel').tag(sync=True)
+
+
+class MapRangeControl(Control):
+    _view_name = Unicode('LeafletMapRangeControlView').tag(sync=True)
+    _model_name = Unicode('LeafletMapRangeControlModel').tag(sync=True)
+
+    prefix = Unicode('Colormap').tag(sync=True, o=True)
+    position = Unicode('bottomleft').tag(sync=True, o=True)
 
 
 class MousePositionControl(Control):

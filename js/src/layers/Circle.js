@@ -41,10 +41,11 @@ L.GeometryUtil.readableDistance = function (distance, isMetric, isFeet, isNautic
 };
 
 // Fix radius sign for CAR projection
+// https://leafletjs.com/examples/extending/extending-1-classes.html#lclassinclude
 L.Circle.include({
-    orgProject: L.Circle.prototype._project,
+    baseProject: L.Circle.prototype._project,
     _project: function () {
-        this.orgProject();
+        this.baseProject();
         this._radius = Math.abs(this._radius);
     }
 });

@@ -42,6 +42,7 @@ var widgetcontrol = require('./controls/WidgetControl.js')
 var zoomcontrol = require('./controls/ZoomControl.js')
 var scalecontrol = require('./controls/ScaleControl.js')
 var mousecontrol = require('./controls/MousePositionControl.js')
+var maprangecontrol = require('./controls/MapRangeControl.js')
 
 //Geo
 var car = require('./geo/crs/CRS.CAR.js')
@@ -104,6 +105,7 @@ module.exports = {
     LeafletDrawControlView : drawcontrol.LeafletDrawControlView,
     LeafletSplitMapControlView : splitmapcontrol.LeafletSplitMapControlView,
     LeafletFullScreenControlView : fullscreencontrol.LeafletFullScreenControlView,
+    LeafletMapRangeControlView : maprangecontrol.LeafletMapRangeControlView,
     LeafletMousePositionControlView : mousecontrol.LeafletMousePositionControlView,
     LeafletWidgetControlView : widgetcontrol.LeafletWidgetControlView,
     LeafletZoomControlView : zoomcontrol.LeafletZoomControlView,
@@ -146,6 +148,7 @@ module.exports = {
     LeafletDrawControlModel : drawcontrol.LeafletDrawControlModel,
     LeafletSplitMapControlModel : splitmapcontrol.LeafletSplitMapControlModel,
     LeafletFullScreenControlModel : fullscreencontrol.LeafletFullScreenControlModel,
+    LeafletMapRangeControlModel : maprangecontrol.LeafletMapRangeControlModel,
     LeafletMousePositionControlModel : mousecontrol.LeafletMousePositionControlModel,
     LeafletWidgetControlModel : widgetcontrol.LeafletWidgetControlModel,
     LeafletZoomControlModel : zoomcontrol.LeafletZoomControlModel,
